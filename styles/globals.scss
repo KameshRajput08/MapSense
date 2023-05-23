@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
+.marker {
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.location {
+  background-image: url("/location.png");
+}
+
+.src {
+  background-image: url("/src.png");
+  width: 30px;
+  height: 30px;
+}
+
+.dest {
+  background-image: url("/dest.png");
+}
+
+.sugges_item {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Change 3 to the number of lines you want to show before the ellipsis */
+  -webkit-box-orient: vertical;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.2);
+}
+
+.dot {
+  @apply h-[2px] w-[2px] rounded-[50%] inline-block bg-[#a8b2d1];
+}
+
+.sugges:hover {
+  h2 {
+    color: #0e2127;
+  }
+  span {
+    color: white;
+  }
+}
+
+.media {
+  display: flex !important;
+  line-height: normal;
+  padding: 6px 0;
+}
+
+.media label {
+  border-right: 1px solid #c1c1c1;
+  flex: 0 0 90px;
+
+  @apply max-w-[90px] text-lightestSlate text-base m-0;
+}
+
+.media p {
+  @apply  pl-4 mb-0 text-sm;
+}
